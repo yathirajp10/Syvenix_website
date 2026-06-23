@@ -1,69 +1,90 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-import GoogleAnalytics from "@/components/GoogleAnalytics";
-import MicrosoftClarity from "@/components/MicrosoftClarity";
-
-const inter = Inter({
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Website Designer in Bangalore | Yathiraj Web Solutions",
+  metadataBase: new URL("https://yathiraj.co.in"),
+
+  title: {
+    default: "Syvenix | Technology With Purpose",
+    template: "%s | Syvenix",
+  },
 
   description:
-    "Professional website designer in Bangalore helping businesses build modern websites, hosting setup, domain management, SEO setup and website maintenance.",
+    "Syvenix is a technology company helping businesses build a powerful digital presence through premium website development, hosting, SEO, business email setup, and intelligent digital solutions.",
 
   keywords: [
-    "website designer",
-    "website developer",
+    "Syvenix",
+    "technology company",
+    "website development",
+    "website designer Bangalore",
+    "web development",
     "business website",
-    "website designer bangalore",
-    "web development services",
-    "hosting setup",
+    "hosting",
     "domain management",
-    "seo setup",
-    "freelance web developer",
+    "SEO",
+    "business email",
+    "website maintenance",
+    "digital solutions",
+    "software company",
   ],
 
   authors: [
     {
-      name: "Yathiraj",
+      name: "Yathiraj P",
+      url: "https://yathiraj.co.in",
     },
   ],
 
-  creator: "Yathiraj Web Solutions",
+  creator: "Syvenix",
+
+  publisher: "Syvenix",
+
+  applicationName: "Syvenix",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  alternates: {
+    canonical: "https://yathiraj.co.in",
+  },
 
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
     apple: "/icon.png",
   },
 
   openGraph: {
-    title: "Yathiraj Web Solutions",
+    title: "Syvenix | Technology With Purpose",
+
     description:
-      "Professional websites, hosting, domains, SEO setup, and maintenance services for businesses.",
+      "Premium website development, hosting, SEO, business email setup and intelligent digital solutions for modern businesses.",
+
     url: "https://yathiraj.co.in",
-    siteName: "Yathiraj Web Solutions",
+
+    siteName: "Syvenix",
+
     locale: "en_US",
+
     type: "website",
+
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Syvenix",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title: "Syvenix | Technology With Purpose",
+
+    description:
+      "Premium website development, hosting, SEO and intelligent digital solutions.",
+
+    images: ["/logo.png"],
   },
 };
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>
-        <GoogleAnalytics />
-        <MicrosoftClarity />
-        {children}
-      </body>
-    </html>
-  );
-}
